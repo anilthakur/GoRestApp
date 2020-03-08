@@ -60,8 +60,6 @@ class PersonRepoImplTest {
 
     private var mockWebServer = MockWebServer()
 
-    @Mock
-    lateinit var personRepo: PersonRepo
 
     val result: ArrayList<ResultItem?>? = null
     @Before

@@ -11,27 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e01b06a2-3ff9-4f0c-9512-57559e607f0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_mockwebserver_4_2_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_4_2_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/base/network/ConnectivityReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/PersonUseCaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries/PersonRepoImplTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/person.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/GetPersonUseCaseTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/viewmodel/PersonViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/MainApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/MainApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/data/repository/PersonRepoImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/data/repository/PersonRepoImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/di/module/ApplicationModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/di/module/ApplicationModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/PersonUseCaseTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries/PersonRepoImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries/PersonRepoImplTest.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +29,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="237" />
+    <option name="myElementSize" value="249" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -61,10 +50,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/PersonUseCaseTest.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/viewmodel/PersonViewModelTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="289">
+              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+              <folding>
+                <element signature="e#38#658#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/viewmodel/PersonViewModelImpl.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" column="74" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -129,8 +130,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/data/repository/PersonRepoImpl.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/di/module/ApplicationModule.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/anil/testutils/TestExtensions.kt" />
-        <option value="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries/PersonRepoImplTest.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/PersonUseCaseTest.kt" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries/PersonRepoImplTest.kt" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/GetPersonUseCaseTest.kt" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/viewmodel/PersonViewModelTest.kt" />
       </list>
     </option>
   </component>
@@ -262,6 +265,18 @@
               <item name="GoRestApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="anil" type="462c0819:PsiDirectoryNode" />
+              <item name="gorestapp" type="462c0819:PsiDirectoryNode" />
+              <item name="viewmodel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GoRestApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GoRestApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -301,18 +316,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="anil" type="462c0819:PsiDirectoryNode" />
               <item name="gorestapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GoRestApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GoRestApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="anil" type="462c0819:PsiDirectoryNode" />
-              <item name="gorestapp" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GoRestApp" type="b2602c69:ProjectViewProjectNode" />
@@ -595,69 +598,68 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.PersonRepoImplTest">
-    <configuration name="PersonRepoImplTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Android JUnit.gorestapp in app">
+    <configuration name="GetPersonUseCaseTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.anil.gorestapp.repostries.*" />
+          <option name="PATTERN" value="com.anil.gorestapp.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.anil.gorestapp.repostries" />
-      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.repostries.PersonRepoImplTest" />
+      <option name="PACKAGE_NAME" value="com.anil.gorestapp.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.domain.GetPersonUseCaseTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonRepoImplTest.getOffersType_remote_Success" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GetPersonUseCaseTest.testGetPersonUseCases_getPerson_Error" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.anil.gorestapp.repostries.*" />
+          <option name="PATTERN" value="com.anil.gorestapp.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.anil.gorestapp.repostries" />
-      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.repostries.PersonRepoImplTest" />
-      <option name="METHOD_NAME" value="getOffersType_remote_Success" />
+      <option name="PACKAGE_NAME" value="com.anil.gorestapp.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.domain.GetPersonUseCaseTest" />
+      <option name="METHOD_NAME" value="testGetPersonUseCases_getPerson_Error" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonRepoImplTest.getPeerson_remote_Success" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GetPersonUseCaseTest.testGetTescoNewsUseCases_getTescoNews_Success" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.anil.gorestapp.repostries.*" />
+          <option name="PATTERN" value="com.anil.gorestapp.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.anil.gorestapp.repostries" />
-      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.repostries.PersonRepoImplTest" />
-      <option name="METHOD_NAME" value="getPeerson_remote_Success" />
+      <option name="PACKAGE_NAME" value="com.anil.gorestapp.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.domain.GetPersonUseCaseTest" />
+      <option name="METHOD_NAME" value="testGetTescoNewsUseCases_getTescoNews_Success" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonRepoImplTest.getPerson_fromDb_Success" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersonViewModelTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.anil.gorestapp.repostries.*" />
+          <option name="PATTERN" value="com.anil.gorestapp.viewmodel.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.anil.gorestapp.repostries" />
-      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.repostries.PersonRepoImplTest" />
-      <option name="METHOD_NAME" value="getPerson_fromDb_Success" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.anil.gorestapp.viewmodel" />
+      <option name="MAIN_CLASS_NAME" value="com.anil.gorestapp.viewmodel.PersonViewModelTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
@@ -670,11 +672,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="repostries in app" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="gorestapp in app" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TEST_OBJECT" value="directory" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <dir value="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries" />
+      <dir value="$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -734,11 +736,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.PersonRepoImplTest" />
-        <item itemvalue="Android JUnit.repostries in app" />
-        <item itemvalue="Android JUnit.PersonRepoImplTest.getPerson_fromDb_Success" />
-        <item itemvalue="Android JUnit.PersonRepoImplTest.getPeerson_remote_Success" />
-        <item itemvalue="Android JUnit.PersonRepoImplTest.getOffersType_remote_Success" />
+        <item itemvalue="Android JUnit.gorestapp in app" />
+        <item itemvalue="Android JUnit.PersonViewModelTest" />
+        <item itemvalue="Android JUnit.GetPersonUseCaseTest" />
+        <item itemvalue="Android JUnit.GetPersonUseCaseTest.testGetPersonUseCases_getPerson_Error" />
+        <item itemvalue="Android JUnit.GetPersonUseCaseTest.testGetTescoNewsUseCases_getTescoNews_Success" />
       </list>
     </recent_temporary>
   </component>
@@ -774,25 +776,17 @@
       <option name="project" value="LOCAL" />
       <updated>1583666372152</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="-- repo test case">
+      <created>1583676848908</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583676848908</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PersonRepoImplTest_getOffersType_remote_Success - 2020.03.08 at 19h 16m 50s.xml">
-      <configuration name="PersonRepoImplTest.getOffersType_remote_Success" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="PersonRepoImplTest_getOffersType_remote_Success - 2020.03.08 at 19h 17m 09s.xml">
-      <configuration name="PersonRepoImplTest.getOffersType_remote_Success" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="PersonRepoImplTest_getOffersType_remote_Success - 2020.03.08 at 19h 17m 27s.xml">
-      <configuration name="PersonRepoImplTest.getOffersType_remote_Success" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="PersonRepoImplTest_getPeerson_remote_Success - 2020.03.08 at 19h 27m 45s.xml">
-      <configuration name="PersonRepoImplTest.getPeerson_remote_Success" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="repostries_in_app - 2020.03.08 at 19h 28m 12s.xml">
-      <configuration name="repostries in app" configurationId="AndroidJUnit" />
-    </history-entry>
     <history-entry file="PersonRepoImplTest_getPerson_fromDb_Success - 2020.03.08 at 19h 34m 04s.xml">
       <configuration name="PersonRepoImplTest.getPerson_fromDb_Success" configurationId="AndroidJUnit" />
     </history-entry>
@@ -808,12 +802,27 @@
     <history-entry file="PersonRepoImplTest - 2020.03.08 at 19h 36m 37s.xml">
       <configuration name="PersonRepoImplTest" configurationId="AndroidJUnit" />
     </history-entry>
+    <history-entry file="GetPersonUseCaseTest_testGetTescoNewsUseCases_getTescoNews_Success - 2020.03.08 at 19h 56m 31s.xml">
+      <configuration name="GetPersonUseCaseTest.testGetTescoNewsUseCases_getTescoNews_Success" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="GetPersonUseCaseTest_testGetPersonUseCases_getPerson_Error - 2020.03.08 at 19h 59m 15s.xml">
+      <configuration name="GetPersonUseCaseTest.testGetPersonUseCases_getPerson_Error" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="GetPersonUseCaseTest - 2020.03.08 at 19h 59m 20s.xml">
+      <configuration name="GetPersonUseCaseTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="PersonViewModelTest - 2020.03.08 at 20h 14m 50s.xml">
+      <configuration name="PersonViewModelTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="gorestapp_in_app - 2020.03.08 at 20h 15m 02s.xml">
+      <configuration name="gorestapp in app" configurationId="AndroidJUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25763127" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25763127" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -821,10 +830,10 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Run" weight="0.3291714" />
+      <window_info anchor="bottom" id="Run" visible="true" weight="0.3291714" />
       <window_info anchor="bottom" id="Debug" weight="0.3291714" />
       <window_info anchor="bottom" id="Find" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="0" visible="true" weight="0.3291714" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3291714" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.3291714" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.3291714" />
@@ -832,7 +841,7 @@
       <window_info anchor="bottom" id="Build" order="5" weight="0.3291714" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="right" id="Preview" weight="0.32967034" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32967034" />
+      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.32967034" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -910,13 +919,15 @@
     <MESSAGE value="-- Print Data in Recycler View" />
     <MESSAGE value="-- added missing file" />
     <MESSAGE value="-- removed author" />
-    <option name="LAST_COMMIT_MESSAGE" value="-- removed author" />
+    <MESSAGE value="-- repo test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="-- repo test case" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GoRestApp$repostries_in_app.ic" NAME="repostries in app Coverage Results" MODIFIED="1583676266026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/GoRestApp$PersonRepoImplTest.ic" NAME="PersonRepoImplTest Coverage Results" MODIFIED="1583676395059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.anil.gorestapp.repostries.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/GoRestApp$gorestapp_in_app.ic" NAME="gorestapp in app Coverage Results" MODIFIED="1583678697536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1023,13 +1034,6 @@
           <folding>
             <element signature="e#49#297#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/viewmodel/PersonViewModelImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1266,16 +1270,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries/PersonRepoImplTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-          <folding>
-            <element signature="e#39#1557#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/domain/PersonUseCase.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1290,10 +1284,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/PersonUseCaseTest.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/domain/GetPersonUseCaseTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="491">
+          <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+          <folding>
+            <element signature="e#35#758#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/repostries/PersonRepoImplTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/anil/gorestapp/viewmodel/PersonViewModelImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="74" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/anil/gorestapp/viewmodel/PersonViewModelTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#38#658#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
