@@ -1,6 +1,6 @@
 package com.android.artgallery.di.module
 
-import com.anil.gorestapp.presentation.MainActivity
+import com.anil.gorestapp.presentation.view.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

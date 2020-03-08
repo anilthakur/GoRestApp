@@ -1,4 +1,4 @@
-package com.anil.gorestapp.presentation
+package com.anil.gorestapp.presentation.view
 
 import android.os.Bundle
 import android.view.View
@@ -16,7 +16,6 @@ import com.anil.gorestapp.viewmodel.PersonViewModelImpl
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
-import androidx.appcompat.widget.Toolbar
 
 
 class MainActivity : AppCompatActivity() {
