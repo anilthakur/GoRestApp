@@ -40,9 +40,6 @@ import java.util.concurrent.Executor
 import java.util.concurrent.TimeUnit
 
 
-/**
- * Created by Anil Kumar on 2020-03-08
- */
 @RunWith(MockitoJUnitRunner::class)
 class PersonRepoImplTest {
     private lateinit var subject: PersonRepoImpl

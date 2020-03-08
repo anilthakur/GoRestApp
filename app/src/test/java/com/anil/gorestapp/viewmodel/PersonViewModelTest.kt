@@ -19,9 +19,6 @@ import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 
-/**
- * Created by Anil Kumar on 2020-03-08
- */
 @RunWith(MockitoJUnitRunner::class)
 class PersonViewModelTest {
 

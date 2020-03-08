@@ -1,5 +1,6 @@
 package com.anil.gorestapp.presentation.view
 
+import android.content.BroadcastReceiver
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
@@ -19,6 +20,9 @@ import com.anil.gorestapp.viewmodel.PersonViewModelImpl
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
+import android.os.Build
+
+
 
 
 class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
@@ -26,10 +30,9 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         showNetworkMessage(isConnected)
     }
 
-
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    val adapter: PagerAdapter? = null
+    lateinit var mNetworkReceiver: BroadcastReceiver
     private val viewModel: PersonViewModelImpl by lazy {
         ViewModelProviders.of(this, viewModelFactory).get(PersonViewModelImpl::class.java)
     }
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        mNetworkReceiver = ConnectivityReceiver()
         toolbar.title = getString(R.string.app_name)
         setSupportActionBar(toolbar);
         offerTypeResponseMutableData()
@@ -67,17 +70,47 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         })
     }
 
+    override fun onStart() {
+        super.onStart()
+        registerNetworkBroadcastForNougat()
+    }
 
     override fun onResume() {
         super.onResume()
         ConnectivityReceiver.connectivityReceiverListener = this
     }
 
+    override fun onPause() {
+        super.onPause()
+        unregisterNetworkChanges()
+    }
+
     private fun showNetworkMessage(isConnected: Boolean) {
+
         if (!isConnected) {
             viewModel.getPersonData(false)
         } else {
             viewModel.getPersonData(true)
         }
+
     }
+
+    private fun registerNetworkBroadcastForNougat() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            registerReceiver(mNetworkReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            registerReceiver(mNetworkReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        }
+    }
+
+    protected fun unregisterNetworkChanges() {
+        try {
+            unregisterReceiver(mNetworkReceiver)
+        } catch (e: IllegalArgumentException) {
+            e.printStackTrace()
+        }
+
+    }
+
 }
