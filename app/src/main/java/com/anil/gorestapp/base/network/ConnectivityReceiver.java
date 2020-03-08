@@ -33,12 +33,19 @@ public class ConnectivityReceiver extends BroadcastReceiver {
     }
 
     public static boolean isConnected() {
-        ConnectivityManager
-                cm = (ConnectivityManager) MainApplication.Companion.getMInstance().getApplicationContext()
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        return activeNetwork != null
-                && activeNetwork.isConnectedOrConnecting();
+        try {
+
+
+            ConnectivityManager
+                    cm = (ConnectivityManager) MainApplication.Companion.getMInstance().getApplicationContext()
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            return activeNetwork != null
+                    && activeNetwork.isConnectedOrConnecting();
+        }
+        catch (IllegalStateException e){
+            return  false;
+        }
     }
 
 
