@@ -71,7 +71,7 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideOfferRepo(api: RetrofitService, dao: PersonDao, schedulerProvider: BaseSchedulerProvider, connectivityManager: ConnectivityManager, isTest: Boolean): PersonRepo = PersonRepoImpl(api, dao, schedulerProvider,  isTest)
+    fun provideOfferRepo(api: RetrofitService, dao: PersonDao, schedulerProvider: BaseSchedulerProvider,  isTest: Boolean): PersonRepo = PersonRepoImpl(api, dao, schedulerProvider,  isTest)
 
     @Provides
     @Singleton
