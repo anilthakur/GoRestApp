@@ -16,8 +16,8 @@ class PersonViewModelImpl @Inject constructor(private val getPersonUseCase: Pers
     }
 
 
-    override fun getPersonData() {
-        getPersonUseCase.execute()
+    override fun getPersonData(isRemote:Boolean) {
+        getPersonUseCase.execute(isRemote)
     }
 
     private fun onGetPersonTypeResult(result: PersonUseCase.Result) {

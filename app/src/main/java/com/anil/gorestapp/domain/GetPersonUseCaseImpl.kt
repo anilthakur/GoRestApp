@@ -20,8 +20,8 @@ class GetPersonUseCaseImpl @Inject constructor(
 
     override fun resultLiveData(): LiveData<PersonUseCase.Result> = getPersonLiveData
 
-    override fun execute() {
-        trackDisposable(personRepo.getPersonData()
+    override fun execute(isRemote:Boolean) {
+        trackDisposable(personRepo.getPersonData(isRemote)
                 .observeOn(schedulerProvider.ui())
                 .subscribe { resultData ->
                     if (resultData.isSuccess()) {

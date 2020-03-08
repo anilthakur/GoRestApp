@@ -1,5 +1,7 @@
 package com.anil.gorestapp.presentation.view
 
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.anil.gorestapp.R
+import com.anil.gorestapp.base.network.ConnectivityReceiver
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.data.entities.Person
 import com.anil.gorestapp.presentation.adapter.PersonAdapter
@@ -18,12 +21,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
+    override fun onNetworkConnectionChanged(isConnected: Boolean) {
+        showNetworkMessage(isConnected)
+    }
 
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-
     val adapter: PagerAdapter? = null
     private val viewModel: PersonViewModelImpl by lazy {
         ViewModelProviders.of(this, viewModelFactory).get(PersonViewModelImpl::class.java)
@@ -33,10 +38,11 @@ class MainActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         toolbar.title = getString(R.string.app_name)
         setSupportActionBar(toolbar);
-        viewModel.getPersonData()
         offerTypeResponseMutableData()
+
 
     }
 
@@ -61,4 +67,17 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        ConnectivityReceiver.connectivityReceiverListener = this
+    }
+
+    private fun showNetworkMessage(isConnected: Boolean) {
+        if (!isConnected) {
+            viewModel.getPersonData(false)
+        } else {
+            viewModel.getPersonData(true)
+        }
+    }
 }

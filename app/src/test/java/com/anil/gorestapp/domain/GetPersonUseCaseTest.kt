@@ -81,10 +81,10 @@ class GetPersonUseCaseTest {
     fun testGetPersonUseCases_getPerson_Success() {
         //GIVEN
         response = ResultData.fromData(Person())
-        given(personRepo.getPersonData()).willReturn(Observable.just(response))
+        given(personRepo.getPersonData(true)).willReturn(Observable.just(response))
 
         //WHEN
-        subject.execute()
+        subject.execute(true)
 
         //THEN
         verify(getPersonLiveData).value = PersonUseCase.Result.HasPersonData(response.data as Person)
@@ -94,10 +94,10 @@ class GetPersonUseCaseTest {
     fun testGetPersonUseCases_getPerson_Error() {
         //GIVEN
         response = ResultData.fromError(errorModel = ErrorModel(key = Person.INSTANCE_ID, message = "", code = -1, responseCode = null, isServiceError = true))
-        given(personRepo.getPersonData()).willReturn(Observable.just(response))
+        given(personRepo.getPersonData(true)).willReturn(Observable.just(response))
 
         //WHEN
-        subject.execute()
+        subject.execute(true)
 
         //THEN
         verify(getPersonLiveData).value = PersonUseCase.Result.Error(ErrorModel(key = Person.INSTANCE_ID, message = "", code = -1, responseCode = null, isServiceError = true))

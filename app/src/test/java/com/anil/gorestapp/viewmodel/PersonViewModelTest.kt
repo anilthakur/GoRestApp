@@ -63,7 +63,7 @@ class PersonViewModelTest {
     @Test
     fun test_Person_execute_success() {
         //GIVEN
-        subject.getPersonData()
+        subject.getPersonData(true)
 
         // THEN
         then(personTypeStateLiveDataObserver).shouldHaveZeroInteractions()

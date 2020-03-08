@@ -15,13 +15,10 @@ import io.reactivex.ObservableEmitter
 import io.reactivex.Single
 import retrofit2.HttpException
 import javax.inject.Inject
-import android.content.Context.CONNECTIVITY_SERVICE
-import androidx.core.content.ContextCompat.getSystemService
-import com.anil.gorestapp.base.network.ConnectivityReceiver
 
 
 class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val personDao: PersonDao, private val schedulerProvider: BaseSchedulerProvider, private val isTestMode: Boolean = false) : PersonRepo {
-    override fun getPersonData(): Observable<ResultData> {
+    override fun getPersonData(isRemote:Boolean): Observable<ResultData> {
         return getPersonDataFromDb()
                 .toObservable()
                 .subscribeOn(schedulerProvider.io())
@@ -31,10 +28,10 @@ class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val p
                     } else {
                         val personLocalData = personList[0]
                         if (isTestMode) {
-                            return@flatMap validateAndFetchData(personLocalData)
+                            return@flatMap validateAndFetchData(isRemote,personLocalData)
                         } else {
-                            if (ConnectivityReceiver.isConnected()) {
-                                return@flatMap validateAndFetchData(personLocalData)
+                            if (isRemote) {
+                                return@flatMap validateAndFetchData(isRemote,personLocalData)
                             } else {
                                 return@flatMap Observable.just(ResultData.fromData(personLocalData))
                             }
@@ -45,8 +42,8 @@ class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val p
     }
 
 
-    fun validateAndFetchData(person: Person?): Observable<ResultData> {
-        return if (person == null) {
+    fun validateAndFetchData(isRemote: Boolean,person: Person?): Observable<ResultData> {
+        return if (isRemote||person == null) {
             getRemoteDataObservable(person).toObservable()
         } else {
             Observable.just(ResultData.fromData(person))

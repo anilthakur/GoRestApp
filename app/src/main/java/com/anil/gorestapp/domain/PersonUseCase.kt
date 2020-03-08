@@ -11,5 +11,5 @@ interface PersonUseCase {
     }
 
     fun resultLiveData(): LiveData<Result>
-    fun execute()
+    fun execute(isRemote:Boolean)
 }
