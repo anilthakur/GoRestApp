@@ -1,5 +1,6 @@
 package com.anil.gorestapp.data.repository
 
+import android.content.Context
 import android.net.ConnectivityManager
 import com.anil.gorestapp.base.base.domain.ResultData
 import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
@@ -14,10 +15,12 @@ import io.reactivex.ObservableEmitter
 import io.reactivex.Single
 import retrofit2.HttpException
 import javax.inject.Inject
+import android.content.Context.CONNECTIVITY_SERVICE
+import androidx.core.content.ContextCompat.getSystemService
+import com.anil.gorestapp.base.network.ConnectivityReceiver
 
 
-
-class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val personDao: PersonDao, private val schedulerProvider: BaseSchedulerProvider, private val connectivityManager: ConnectivityManager, private val isTestMode: Boolean = false) : PersonRepo {
+class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val personDao: PersonDao, private val schedulerProvider: BaseSchedulerProvider, private val isTestMode: Boolean = false) : PersonRepo {
     override fun getPersonData(): Observable<ResultData> {
         return getPersonDataFromDb()
                 .toObservable()
@@ -30,7 +33,7 @@ class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val p
                         if (isTestMode) {
                             return@flatMap validateAndFetchData(personLocalData)
                         } else {
-                            if (connectivityManager.isActiveNetworkMetered) {
+                            if (ConnectivityReceiver.isConnected()) {
                                 return@flatMap validateAndFetchData(personLocalData)
                             } else {
                                 return@flatMap Observable.just(ResultData.fromData(personLocalData))
@@ -93,6 +96,5 @@ class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val p
         }
 
     }
-
 
 }
