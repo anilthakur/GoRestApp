@@ -15,9 +15,7 @@ import io.reactivex.Single
 import retrofit2.HttpException
 import javax.inject.Inject
 
-/**
- * Created by Anil Kumar on 2020-03-07
- */
+
 
 class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val personDao: PersonDao, private val schedulerProvider: BaseSchedulerProvider, private val connectivityManager: ConnectivityManager, private val isTestMode: Boolean = false) : PersonRepo {
     override fun getPersonData(): Observable<ResultData> {

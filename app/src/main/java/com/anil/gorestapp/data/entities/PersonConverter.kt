@@ -5,9 +5,6 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
 
-/**
- * Created by Anil Kumar on 2020-03-07
- */
 class PersonConverter {
 
     @TypeConverter

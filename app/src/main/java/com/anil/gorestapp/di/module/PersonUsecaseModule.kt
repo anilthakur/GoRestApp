@@ -6,9 +6,6 @@ import com.anil.gorestapp.domain.PersonUseCase
 import dagger.Module
 import dagger.Provides
 
-/**
- * Created by Anil Kumar on 2020-03-08
- */
 @Module
 class  PersonUsecaseModule{
     @Provides

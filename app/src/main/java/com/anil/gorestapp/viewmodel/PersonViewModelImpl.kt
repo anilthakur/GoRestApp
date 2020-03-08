@@ -5,9 +5,6 @@ import com.anil.gorestapp.data.entities.Person
 import com.anil.gorestapp.domain.PersonUseCase
 import javax.inject.Inject
 
-/**
- * Created by Anil Kumar on 2020-03-07
- */
 class PersonViewModelImpl @Inject constructor(private val getPersonUseCase: PersonUseCase, override val personResponseLiveData: MediatorLiveData<State>) : PersonViewModel() {
 
 

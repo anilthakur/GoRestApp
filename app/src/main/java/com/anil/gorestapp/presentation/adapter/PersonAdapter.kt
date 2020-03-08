@@ -8,9 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.anil.gorestapp.R
 import com.anil.gorestapp.data.entities.ResultItem
 
-/**
- * Created by Anil Kumar on 2020-03-08
- */
 class PersonAdapter(val userList: ArrayList<ResultItem?>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
