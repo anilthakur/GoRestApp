@@ -10,6 +10,7 @@ import com.anil.gorestapp.base.domain.model.ErrorModel
 import com.anil.gorestapp.data.local.PersonDao
 import com.anil.gorestapp.data.entities.Person
 import com.anil.gorestapp.data.remote.RetrofitService
+import com.anil.gorestapp.utils.Constant
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.Single
@@ -54,7 +55,7 @@ class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val p
     override fun getRemoteDataObservable(person: Person?): Single<ResultData> {
 
 
-        return api.getGetPerson("json", "eicWZFJdDxDq1p_Yf_oLc63gLF4Lfak9TiR6")
+        return api.getGetPerson(Constant.DATA_TYPE, Constant.TOKEN)
                 .subscribeOn(schedulerProvider.io())
                 .flatMap { personData ->
                     personData.let {
