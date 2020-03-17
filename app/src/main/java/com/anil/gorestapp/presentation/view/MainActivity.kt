@@ -21,8 +21,7 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 import android.os.Build
-
-
+import com.anil.gorestapp.utils.properties.AppProperties
 
 
 class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
@@ -33,6 +32,9 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     lateinit var mNetworkReceiver: BroadcastReceiver
+
+
+
     private val viewModel: PersonViewModelImpl by lazy {
         ViewModelProviders.of(this, viewModelFactory).get(PersonViewModelImpl::class.java)
     }

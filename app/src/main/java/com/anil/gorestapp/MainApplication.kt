@@ -21,9 +21,14 @@ class MainApplication : Application(), HasActivityInjector {
     @Inject
     lateinit var activityInjector: DispatchingAndroidInjector<Activity>
     private var appComponent: ApplicationComponent? = null
+
+    init {
+        instance = this
+    }
     override fun onCreate() {
         super.onCreate()
         MultiDex.install(this)
+        val context: Context = MainApplication.applicationContext()
         DaggerApplicationComponent
                 .builder()
                 .application(this)
@@ -42,10 +47,15 @@ class MainApplication : Application(), HasActivityInjector {
 
     companion object {
 
-        var mInstance: MainApplication by Delegates.notNull()
 
         fun setConnectivityListener(listener: ConnectivityReceiver.ConnectivityReceiverListener) {
             ConnectivityReceiver.connectivityReceiverListener = listener
+        }
+
+        private var instance: MainApplication? = null
+
+        fun applicationContext() : Context {
+            return instance!!.applicationContext
         }
     }
 

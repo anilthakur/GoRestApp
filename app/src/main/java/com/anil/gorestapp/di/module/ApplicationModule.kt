@@ -2,7 +2,6 @@ package com.anil.gorestapp.di.module
 
 import android.app.Application
 import android.content.Context
-import android.net.ConnectivityManager
 import androidx.lifecycle.MediatorLiveData
 import androidx.room.Room
 import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
@@ -21,6 +20,9 @@ import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.TestScheduler
 import javax.inject.Singleton
+import com.anil.gorestapp.MainApplication
+import com.anil.gorestapp.utils.properties.AppProperties
+
 
 /**
  * Created by Anil Kumar on 2020-03-07
@@ -35,6 +37,14 @@ class ApplicationModule {
     @Singleton
     fun provideBaseSchedulerProvider(): BaseSchedulerProvider {
         return SchedulerProvider()
+    }
+
+
+    @Singleton
+    @Provides
+    fun provideAppProperties(): AppProperties {
+        val sharedPreferences = MainApplication.applicationContext().getSharedPreferences("APPLICATION_SECURED_PREF", Context.MODE_PRIVATE)
+        return AppProperties(sharedPreferences)
     }
 
     @Provides

@@ -1,7 +1,5 @@
 package com.anil.gorestapp.data.repository
 
-import android.content.Context
-import android.net.ConnectivityManager
 import com.anil.gorestapp.base.base.domain.ResultData
 import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
 import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
@@ -10,7 +8,7 @@ import com.anil.gorestapp.base.domain.model.ErrorModel
 import com.anil.gorestapp.data.local.PersonDao
 import com.anil.gorestapp.data.entities.Person
 import com.anil.gorestapp.data.remote.RetrofitService
-import com.anil.gorestapp.utils.Constant
+import com.anil.gorestapp.utils.commonconstant.Constant
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.Single
