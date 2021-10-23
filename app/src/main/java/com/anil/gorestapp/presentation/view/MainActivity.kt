@@ -17,10 +17,10 @@ import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.data.entities.Person
 import com.anil.gorestapp.presentation.adapter.PersonAdapter
 import com.anil.gorestapp.viewmodel.PersonViewModelImpl
-import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 import android.os.Build
+import com.anil.gorestapp.MainApplication
 import com.anil.gorestapp.person.view.widget.PersonWidget
 import com.anil.gorestapp.person.view.widget.PersonWidgetImpl
 
@@ -39,8 +39,10 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
+        // this will tell to dagger, that i need dependencies
+        (application as MainApplication).appComponent()?.inject(this)
+
         setContentView(R.layout.activity_main)
         mNetworkReceiver = ConnectivityReceiver()
         toolbar.title = getString(R.string.app_name)
@@ -61,7 +63,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
                     val adapter = PersonAdapter(personData.result)
                     recyclerView.adapter = adapter
                     recyclerView.layoutManager =
-                            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+                        LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
 
                 } else if (state is BaseViewModel.State.Error) {
                     recyclerView.visibility = View.GONE

@@ -1,7 +1,7 @@
 package com.anil.gorestapp.di.component
 
 import android.app.Application
-import com.android.artgallery.di.module.ActivityModule
+import com.anil.gorestapp.di.module.ActivityModule
 import com.anil.gorestapp.MainApplication
 import com.anil.gorestapp.di.module.ApplicationModule
 import com.anil.gorestapp.di.module.NetworkModule
@@ -17,13 +17,13 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-        modules = [
+    modules = [
 
-            ApplicationModule::class,
-            ActivityModule::class,
-            NetworkModule::class,
-            PersonUsecaseModule::class
-        ]
+        ApplicationModule::class,
+        ActivityModule::class,
+        NetworkModule::class,
+        PersonUsecaseModule::class
+    ]
 )
 interface ApplicationComponent {
     @Component.Builder
