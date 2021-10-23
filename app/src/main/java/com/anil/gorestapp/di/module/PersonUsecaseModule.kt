@@ -1,8 +1,8 @@
 package com.anil.gorestapp.di.module
 
 import androidx.lifecycle.MutableLiveData
-import com.anil.gorestapp.domain.GetPersonUseCaseImpl
-import com.anil.gorestapp.domain.PersonUseCase
+import com.anil.gorestapp.person.domain.GetPersonUseCaseImpl
+import com.anil.gorestapp.person.domain.PersonUseCase
 import dagger.Module
 import dagger.Provides
 

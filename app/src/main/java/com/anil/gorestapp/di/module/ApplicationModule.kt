@@ -2,7 +2,6 @@ package com.anil.gorestapp.di.module
 
 import android.app.Application
 import android.content.Context
-import android.net.ConnectivityManager
 import androidx.lifecycle.MediatorLiveData
 import androidx.room.Room
 import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
@@ -12,9 +11,9 @@ import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.base.database.DbConstants
 import com.anil.gorestapp.base.database.PersonDatabase
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
-import com.anil.gorestapp.data.local.PersonDao
-import com.anil.gorestapp.data.repository.PersonRepo
-import com.anil.gorestapp.data.repository.PersonRepoImpl
+import com.anil.gorestapp.person.local.PersonDao
+import com.anil.gorestapp.person.repository.PersonRepo
+import com.anil.gorestapp.person.repository.PersonRepoImpl
 import com.anil.gorestapp.data.remote.RetrofitService
 import dagger.Module
 import dagger.Provides
@@ -22,9 +21,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.TestScheduler
 import javax.inject.Singleton
 
-/**
- * Created by Anil Kumar on 2020-03-07
- */
 @Module(includes = [PersonModule::class])
 class ApplicationModule {
     @Singleton

@@ -1,6 +1,6 @@
 package com.anil.gorestapp.data.remote
 
-import com.anil.gorestapp.data.entities.Person
+import com.anil.gorestapp.person.entities.Person
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
