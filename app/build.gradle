@@ -63,12 +63,12 @@ dependencies {
     // alternatively - just ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
 
-
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:multidex:1.0.3'
     testImplementation 'junit:junit:4.12'
-
+    implementation 'com.google.errorprone:error_prone_annotations:2.4.0'
+    compileOnly 'com.github.pengrad:jdk9-deps:1.0'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test:rules:1.1.1'
     // espereso
