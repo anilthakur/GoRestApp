@@ -13,14 +13,11 @@ import dagger.multibindings.IntoMap
 @Module
 abstract class PersonModule {
 
-
-
-
-
     @Binds
     @IntoMap
     @ViewModelKey(PersonViewModelImpl::class)
     abstract fun bindPersonViewModel(personViewModelImpl: PersonViewModelImpl): ViewModel
+
     @Binds
     abstract fun bindViewModelFactory(viewModelFactory: PersonViewModelFactory):  ViewModelProvider.Factory
 }
