@@ -5,7 +5,7 @@ import com.android.artgallery.di.module.ActivityModule
 import com.anil.gorestapp.base.MainApplication
 import com.anil.gorestapp.di.module.ApplicationModule
 import com.anil.gorestapp.di.module.NetworkModule
-import com.anil.gorestapp.di.module.PersonUsecaseModule
+import com.anil.gorestapp.person.injection.MainActivityBinding
 import com.anil.gorestapp.person.view.view.MainActivity
 import dagger.BindsInstance
 import dagger.Component
@@ -16,11 +16,10 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-
         ApplicationModule::class,
         ActivityModule::class,
         NetworkModule::class,
-        PersonUsecaseModule::class
+       MainActivityBinding::class
     ]
 )
 interface ApplicationComponent {
@@ -34,5 +33,4 @@ interface ApplicationComponent {
     }
 
     fun inject(application: MainApplication)
-    fun inject(mainActivity: MainActivity)
 }

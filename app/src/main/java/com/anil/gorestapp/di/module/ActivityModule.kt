@@ -7,9 +7,7 @@ import com.anil.gorestapp.preferences.AppPreferenceImpl
 import dagger.Binds
 import dagger.Module
 
-/**
- * Created by Anil Kumar on 2020-02-11
- */
+
 @Module
 abstract class ActivityModule {
 

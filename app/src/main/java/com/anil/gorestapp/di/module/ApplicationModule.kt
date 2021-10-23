@@ -12,16 +12,13 @@ import com.anil.gorestapp.base.database.DbConstants
 import com.anil.gorestapp.base.database.PersonDatabase
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.person.local.PersonDao
-import com.anil.gorestapp.person.repository.PersonRepo
-import com.anil.gorestapp.person.repository.PersonRepoImpl
-import com.anil.gorestapp.data.remote.RetrofitService
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.TestScheduler
 import javax.inject.Singleton
 
-@Module(includes = [PersonModule::class])
+@Module
 class ApplicationModule {
     @Singleton
     @Provides
@@ -65,13 +62,13 @@ class ApplicationModule {
     }
 
 
-    @Singleton
-    @Provides
-    fun provideOfferRepo(api: RetrofitService, dao: PersonDao, schedulerProvider: BaseSchedulerProvider,  isTest: Boolean): PersonRepo = PersonRepoImpl(api, dao, schedulerProvider,  isTest)
+//    @Singleton
+//    @Provides
+//    fun providePersonRepoRepo(api: RetrofitService, dao: PersonDao, schedulerProvider: BaseSchedulerProvider,  isTest: Boolean): PersonRepo = PersonRepoImpl(api, dao, schedulerProvider,  isTest)
 
     @Provides
     @Singleton
-    fun provideTescoNewsDao(database: PersonDatabase): PersonDao = database.personDao()
+    fun providePersonDatabaseDao(database: PersonDatabase): PersonDao = database.personDao()
 
     @Provides
     fun provideMediatorLiveData(): MediatorLiveData<BaseViewModel.State> {

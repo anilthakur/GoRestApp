@@ -3,24 +3,21 @@ package com.anil.gorestapp.person.view.view
 import android.content.BroadcastReceiver
 import android.content.IntentFilter
 import android.net.ConnectivityManager
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anil.gorestapp.R
 import com.anil.gorestapp.base.network.ConnectivityReceiver
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.person.entities.Person
 import com.anil.gorestapp.person.view.adapter.PersonAdapter
-import com.anil.gorestapp.person.viewmodel.PersonViewModelImpl
-import dagger.android.AndroidInjection
+import com.anil.gorestapp.person.view.widget.PersonWidget
+import com.anil.gorestapp.person.viewmodel.PersonViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
-import android.os.Build
-import com.anil.gorestapp.person.view.widget.PersonWidget
 
 
 class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
@@ -29,23 +26,21 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
     }
 
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModel: PersonViewModel
+
+    @Inject
     lateinit var mNetworkReceiver: BroadcastReceiver
+
+    @Inject
     lateinit var personWidgetImpl: PersonWidget
-    private val viewModel: PersonViewModelImpl by lazy {
-        ViewModelProviders.of(this, viewModelFactory).get(PersonViewModelImpl::class.java)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mNetworkReceiver = ConnectivityReceiver()
         toolbar.title = getString(R.string.app_name)
         setSupportActionBar(toolbar);
         offerTypeResponseMutableData()
-
-
     }
 
     private fun offerTypeResponseMutableData() {
@@ -59,7 +54,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
                     val adapter = PersonAdapter(personData.result)
                     recyclerView.adapter = adapter
                     recyclerView.layoutManager =
-                            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+                        LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
 
                 } else if (state is BaseViewModel.State.Error) {
                     recyclerView.visibility = View.GONE
@@ -96,10 +91,16 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
 
     private fun registerNetworkBroadcastForNougat() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            registerReceiver(mNetworkReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+            registerReceiver(
+                mNetworkReceiver,
+                IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+            )
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            registerReceiver(mNetworkReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+            registerReceiver(
+                mNetworkReceiver,
+                IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+            )
         }
     }
 

@@ -6,6 +6,8 @@ import androidx.multidex.MultiDex
 import com.anil.gorestapp.base.network.ConnectivityReceiver
 import com.anil.gorestapp.di.component.ApplicationComponent
 import com.anil.gorestapp.di.component.DaggerApplicationComponent
+import dagger.android.AndroidInjector
+import dagger.android.HasAndroidInjector
 import kotlin.properties.Delegates
 
 
@@ -38,6 +40,8 @@ class MainApplication : Application() {
             ConnectivityReceiver.connectivityReceiverListener = listener
         }
     }
+
+
 
 
 }
