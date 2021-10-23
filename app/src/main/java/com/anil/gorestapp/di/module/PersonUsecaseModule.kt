@@ -13,6 +13,4 @@ class  PersonUsecaseModule{
 
     @Provides
     internal fun provideMutableLiveData() = MutableLiveData<PersonUseCase.Result>()
-
-
 }

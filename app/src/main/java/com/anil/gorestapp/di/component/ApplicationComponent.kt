@@ -6,6 +6,7 @@ import com.anil.gorestapp.MainApplication
 import com.anil.gorestapp.di.module.ApplicationModule
 import com.anil.gorestapp.di.module.NetworkModule
 import com.anil.gorestapp.di.module.PersonUsecaseModule
+import com.anil.gorestapp.presentation.view.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -35,4 +36,5 @@ interface ApplicationComponent {
     }
 
     fun inject(application: MainApplication)
+    fun inject(mainActivity: MainActivity)
 }

@@ -19,6 +19,7 @@ buildscript {
     ext.hamcrestVersion='1.4-atlassian-1'
     ext.roomVersion = '2.2.2'
     ext.lifecycle_version = '2.1.0'
+    ext.daggerVer= "2.38.1"
 
     repositories {
         google()
