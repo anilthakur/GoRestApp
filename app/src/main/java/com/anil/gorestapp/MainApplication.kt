@@ -7,33 +7,27 @@ import androidx.multidex.MultiDex
 import com.anil.gorestapp.base.network.ConnectivityReceiver
 import com.anil.gorestapp.di.component.ApplicationComponent
 import com.anil.gorestapp.di.component.DaggerApplicationComponent
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import javax.inject.Inject
 import kotlin.properties.Delegates
 
 
 /**
  * Created by Anil Kumar on 2020-03-07
  */
-class MainApplication : Application(), HasActivityInjector {
-    private val TAG = MainApplication::class.java.name
-    @Inject
-    lateinit var activityInjector: DispatchingAndroidInjector<Activity>
-    private var appComponent: ApplicationComponent? = null
+class MainApplication : Application() {
+
+    private lateinit var appComponent: ApplicationComponent
+
     override fun onCreate() {
         super.onCreate()
         MultiDex.install(this)
-        DaggerApplicationComponent
-                .builder()
-                .application(this)
-                .build()
-                .inject(this)
+        appComponent = DaggerApplicationComponent
+            .builder()
+            .application(this)
+            .build()
+        appComponent.inject(this)
     }
 
-
-    override fun activityInjector() = activityInjector
-
+    fun appComponent() = appComponent
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
@@ -48,10 +42,6 @@ class MainApplication : Application(), HasActivityInjector {
             ConnectivityReceiver.connectivityReceiverListener = listener
         }
     }
-
-
-
-
 
 
 }
