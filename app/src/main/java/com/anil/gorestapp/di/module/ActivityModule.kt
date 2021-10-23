@@ -15,8 +15,6 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class ActivityModule {
 
-    @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): MainActivity
 
     @Binds
     abstract fun providePersonWidget(personWidget: PersonWidgetImpl) : PersonWidget

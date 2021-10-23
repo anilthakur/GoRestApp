@@ -17,13 +17,13 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-        modules = [
+    modules = [
 
-            ApplicationModule::class,
-            ActivityModule::class,
-            NetworkModule::class,
-            PersonUsecaseModule::class
-        ]
+        ApplicationModule::class,
+        ActivityModule::class,
+        NetworkModule::class,
+        PersonUsecaseModule::class
+    ]
 )
 interface ApplicationComponent {
     @Component.Builder
