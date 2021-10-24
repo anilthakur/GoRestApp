@@ -5,19 +5,16 @@ import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.anil.gorestapp.R
+import com.anil.gorestapp.base.MainApplication
 import com.anil.gorestapp.base.network.ConnectivityReceiver
-import com.anil.gorestapp.base.viewmodel.BaseViewModel
-import com.anil.gorestapp.person.entities.Person
-import com.anil.gorestapp.person.view.adapter.PersonAdapter
 import com.anil.gorestapp.person.view.widget.PersonWidget
 import com.anil.gorestapp.person.viewmodel.PersonViewModel
+import com.anil.gorestapp.person.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
+import androidx.fragment.app.activityViewModels
 
 
 class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
@@ -25,26 +22,32 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         showNetworkMessage(isConnected)
     }
 
-    @Inject
-    lateinit var viewModel: PersonViewModel
-
-    @Inject
+    /*@Inject
     lateinit var mNetworkReceiver: BroadcastReceiver
 
     @Inject
-    lateinit var personWidgetImpl: PersonWidget
+    lateinit var personWidgetImpl: PersonWidget*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mNetworkReceiver = ConnectivityReceiver()
+//        mNetworkReceiver = ConnectivityReceiver()
         toolbar.title = getString(R.string.app_name)
         setSupportActionBar(toolbar);
         offerTypeResponseMutableData()
+
+        addDefaultFragment()
+    }
+
+    private fun addDefaultFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragmentContainer, MainFragment(), "main_fragment")
+            .commit()
     }
 
     private fun offerTypeResponseMutableData() {
-        viewModel.personResponseLiveData.observe(this, Observer { state ->
+        /*viewModel.personResponseLiveData.observe(this, Observer { state ->
             if (state != null) {
                 if (state is BaseViewModel.State.Success) {
                     val personData = (state as BaseViewModel.State.Success).data as Person
@@ -61,12 +64,12 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
                     no_dataFound.visibility = View.VISIBLE
                 }
             }
-        })
+        })*/
     }
 
     override fun onStart() {
         super.onStart()
-        registerNetworkBroadcastForNougat()
+//        registerNetworkBroadcastForNougat()
     }
 
     override fun onResume() {
@@ -76,20 +79,20 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
 
     override fun onPause() {
         super.onPause()
-        unregisterNetworkChanges()
+//        unregisterNetworkChanges()
     }
 
     private fun showNetworkMessage(isConnected: Boolean) {
 
-        if (!isConnected) {
+        /*if (!isConnected) {
             viewModel.getPersonData(false)
         } else {
             viewModel.getPersonData(true)
-        }
+        }*/
 
     }
 
-    private fun registerNetworkBroadcastForNougat() {
+    /*private fun registerNetworkBroadcastForNougat() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             registerReceiver(
                 mNetworkReceiver,
@@ -102,15 +105,14 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
                 IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
             )
         }
-    }
+    }*/
 
-    protected fun unregisterNetworkChanges() {
+    /*protected fun unregisterNetworkChanges() {
         try {
             unregisterReceiver(mNetworkReceiver)
         } catch (e: IllegalArgumentException) {
             e.printStackTrace()
         }
-
-    }
+    }*/
 
 }

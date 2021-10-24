@@ -1,4 +1,4 @@
-package com.anil.gorestapp.preferences
+package com.anil.gorestapp.base.preferences
 
 import android.content.Context
 import javax.inject.Inject

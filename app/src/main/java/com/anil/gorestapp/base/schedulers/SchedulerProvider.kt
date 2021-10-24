@@ -1,4 +1,4 @@
-package com.anil.gorestapp.base.base.schedulers
+package com.anil.gorestapp.base.schedulers
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

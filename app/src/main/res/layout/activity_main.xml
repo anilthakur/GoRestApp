@@ -12,25 +12,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:layout_marginTop="@dimen/margin_12dp"
         android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:id="@+id/no_dataFound"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="NO data Found"
-            android:visibility="gone" />
-
-
+        <androidx.fragment.app.FragmentContainerView
+          android:id="@+id/fragmentContainer"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
     </LinearLayout>
 
 </RelativeLayout>

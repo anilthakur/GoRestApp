@@ -1,4 +1,4 @@
-package com.anil.gorestapp.base.base.domain
+package com.anil.gorestapp.base.domain
 
 import androidx.annotation.NonNull
 import io.reactivex.disposables.CompositeDisposable

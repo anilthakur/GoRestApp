@@ -1,8 +1,8 @@
 package com.anil.gorestapp.person.repository
 
-import com.anil.gorestapp.base.base.domain.ResultData
-import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
-import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
+import com.anil.gorestapp.base.domain.ResultData
+import com.anil.gorestapp.base.schedulers.BaseSchedulerProvider
+import com.anil.gorestapp.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.base.domain.ResponseServiceCode
 import com.anil.gorestapp.base.domain.model.ErrorModel
 import com.anil.gorestapp.person.local.PersonDao
@@ -51,8 +51,6 @@ class PersonRepoImpl @Inject constructor(val api: RetrofitService, private val p
 
 
     override fun getRemoteDataObservable(person: Person?): Single<ResultData> {
-
-
         return api.getGetPerson(Constant.DATA_TYPE, Constant.TOKEN)
                 .subscribeOn(schedulerProvider.io())
                 .flatMap { personData ->

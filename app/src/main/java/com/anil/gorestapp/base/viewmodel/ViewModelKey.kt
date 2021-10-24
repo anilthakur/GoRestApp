@@ -1,4 +1,4 @@
-package com.tesco.clubcardmobile.features.base.viewmodel
+package com.anil.gorestapp.base.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
