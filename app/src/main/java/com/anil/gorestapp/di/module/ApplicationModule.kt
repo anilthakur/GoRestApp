@@ -11,27 +11,27 @@ import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.base.database.DbConstants
 import com.anil.gorestapp.base.database.PersonDatabase
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
+import com.anil.gorestapp.di.scope.PerApplication
 import com.anil.gorestapp.person.local.PersonDao
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.TestScheduler
-import javax.inject.Singleton
 
 @Module
 class ApplicationModule {
-    @Singleton
+    @PerApplication
     @Provides
     fun provideContext(application: Application): Context = application.applicationContext
 
     @Provides
-    @Singleton
+    @PerApplication
     fun provideBaseSchedulerProvider(): BaseSchedulerProvider {
         return SchedulerProvider()
     }
 
     @Provides
-    @Singleton
+    @PerApplication
     fun providePersonDatabase(context: Context): PersonDatabase {
         return Room.databaseBuilder(context, PersonDatabase::class.java!!, DbConstants.PERSON_DB_NAME)
                 .build()
@@ -39,19 +39,19 @@ class ApplicationModule {
 
 
     @Provides
-    @Singleton
+    @PerApplication
     fun provideSchedulerProvider(): SchedulerProvider {
         return SchedulerProvider()
     }
 
     @Provides
-    @Singleton
+    @PerApplication
     fun provideTrampolineSchedulerProvider(): TrampolineSchedulerProvider {
         return TrampolineSchedulerProvider()
     }
 
     @Provides
-    @Singleton
+    @PerApplication
     fun provideTestSchedulerProvider(): TestSchedulerProvider {
         return TestSchedulerProvider(TestScheduler())
     }
@@ -62,12 +62,12 @@ class ApplicationModule {
     }
 
 
-//    @Singleton
+//    @PerApplication
 //    @Provides
 //    fun providePersonRepoRepo(api: RetrofitService, dao: PersonDao, schedulerProvider: BaseSchedulerProvider,  isTest: Boolean): PersonRepo = PersonRepoImpl(api, dao, schedulerProvider,  isTest)
 
     @Provides
-    @Singleton
+    @PerApplication
     fun providePersonDatabaseDao(database: PersonDatabase): PersonDao = database.personDao()
 
     @Provides

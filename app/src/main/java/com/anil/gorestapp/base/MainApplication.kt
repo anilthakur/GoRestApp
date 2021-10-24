@@ -7,22 +7,21 @@ import com.anil.gorestapp.base.network.ConnectivityReceiver
 import com.anil.gorestapp.di.component.ApplicationComponent
 import com.anil.gorestapp.di.component.DaggerApplicationComponent
 import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 import kotlin.properties.Delegates
 
 
-class MainApplication : Application() {
+open class MainApplication : Application(),HasAndroidInjector {
 
     private lateinit var appComponent: ApplicationComponent
-
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
     override fun onCreate() {
         super.onCreate()
         MultiDex.install(this)
-        appComponent = DaggerApplicationComponent
-            .builder()
-            .application(this)
-            .build()
-        appComponent.inject(this)
+        initDagger()
     }
 
     fun appComponent() = appComponent
@@ -40,8 +39,13 @@ class MainApplication : Application() {
             ConnectivityReceiver.connectivityReceiverListener = listener
         }
     }
-
-
+    open fun initDagger() {
+        DaggerApplicationComponent.builder()
+            .application(this)
+            .build()
+            .inject(this)
+    }
+    override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
 
 
 }

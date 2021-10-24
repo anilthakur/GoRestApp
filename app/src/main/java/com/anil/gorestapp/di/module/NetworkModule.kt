@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import com.anil.gorestapp.data.remote.RetrofitService
+import com.anil.gorestapp.di.scope.PerApplication
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -14,13 +15,12 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 
 @Module(includes = [ApplicationModule::class])
 class NetworkModule {
     @Provides
-    @Singleton
+    @PerApplication
     fun providesRetrofit(
             gsonConverterFactory: GsonConverterFactory,
             rxJava2CallAdapterFactory: RxJava2CallAdapterFactory,
@@ -35,7 +35,7 @@ class NetworkModule {
     }
 
     @Provides
-    @Singleton
+    @PerApplication
     fun providesOkHttpClient(context: Context, isNetworkAvailable: Boolean): OkHttpClient {
         val cacheSize = (5 * 1024 * 1024).toLong()
         val mCache = Cache(context.cacheDir, cacheSize)
@@ -69,39 +69,39 @@ class NetworkModule {
 
 
     @Provides
-    @Singleton
+    @PerApplication
     fun providesGson(): Gson {
         return Gson()
     }
 
     @Provides
-    @Singleton
+    @PerApplication
     fun providesGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }
 
     @Provides
-    @Singleton
+    @PerApplication
     fun providesRxJavaCallAdapterFactory(): RxJava2CallAdapterFactory {
         return RxJava2CallAdapterFactory.create()
     }
 
     @Provides
-    @Singleton
+    @PerApplication
     fun provideIsNetworkAvailable(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
         return activeNetwork != null && activeNetwork.isConnected
     }
     @Provides
-    @Singleton
+    @PerApplication
     fun provideConnectvityManagerAvailable(context: Context): ConnectivityManager {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return connectivityManager
     }
 
 
-    @Singleton
+    @PerApplication
     @Provides
     fun provideService(retrofit: Retrofit): RetrofitService {
         return retrofit.create(RetrofitService::class.java)

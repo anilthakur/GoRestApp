@@ -19,7 +19,6 @@ class MainActivityActivityModule {
 
     @Provides
     @PerActivity
-    @ForActivity
     fun providePersonViewModel(
         mainActivity: MainActivity,
         factory: PersonViewModelFactory
