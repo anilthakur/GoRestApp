@@ -1,4 +1,4 @@
-package com.anil.gorestapp.base.database
+package com.anil.gorestapp.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

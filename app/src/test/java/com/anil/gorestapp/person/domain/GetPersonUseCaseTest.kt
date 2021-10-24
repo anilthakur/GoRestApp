@@ -3,8 +3,8 @@ package com.anil.gorestapp.person.domain
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.anil.gorestapp.base.base.domain.ResultData
-import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
+import com.anil.gorestapp.base.domain.ResultData
+import com.anil.gorestapp.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.base.domain.model.ErrorModel
 import com.anil.gorestapp.person.entities.Person
 import com.anil.gorestapp.person.repository.PersonRepo

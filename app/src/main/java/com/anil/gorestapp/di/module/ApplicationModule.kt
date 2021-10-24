@@ -4,12 +4,12 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.MediatorLiveData
 import androidx.room.Room
-import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
-import com.anil.gorestapp.base.base.schedulers.SchedulerProvider
-import com.anil.gorestapp.base.base.schedulers.TestSchedulerProvider
-import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
-import com.anil.gorestapp.base.database.DbConstants
-import com.anil.gorestapp.base.database.PersonDatabase
+import com.anil.gorestapp.base.schedulers.BaseSchedulerProvider
+import com.anil.gorestapp.base.schedulers.SchedulerProvider
+import com.anil.gorestapp.base.schedulers.TestSchedulerProvider
+import com.anil.gorestapp.base.schedulers.TrampolineSchedulerProvider
+import com.anil.gorestapp.data.database.DbConstants
+import com.anil.gorestapp.data.database.PersonDatabase
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.person.local.PersonDao
 import dagger.Module
@@ -36,7 +36,6 @@ class ApplicationModule {
         return Room.databaseBuilder(context, PersonDatabase::class.java!!, DbConstants.PERSON_DB_NAME)
                 .build()
     }
-
 
     @Provides
     @Singleton

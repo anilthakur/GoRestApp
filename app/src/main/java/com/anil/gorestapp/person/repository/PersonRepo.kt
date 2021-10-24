@@ -1,6 +1,6 @@
 package com.anil.gorestapp.person.repository
 
-import com.anil.gorestapp.base.base.domain.ResultData
+import com.anil.gorestapp.base.domain.ResultData
 import com.anil.gorestapp.person.entities.Person
 import io.reactivex.Observable
 import io.reactivex.Single

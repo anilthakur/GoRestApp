@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.anil.gorestapp.R
 import com.anil.gorestapp.person.entities.ResultItem
 
-class PersonAdapter(val userList: ArrayList<ResultItem?>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+class PersonAdapter : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+
+    private var userList: ArrayList<ResultItem?>? = null
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonAdapter.ViewHolder {
@@ -23,17 +25,21 @@ class PersonAdapter(val userList: ArrayList<ResultItem?>?) : RecyclerView.Adapte
 
     //this method is giving the size of the list
     override fun getItemCount(): Int {
-        return userList?.size!!
+        return userList?.size ?: 0
     }
 
     //the class is hodling the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         fun bindItems(user: ResultItem) {
             val textViewName = itemView.findViewById(R.id.textViewUsername) as TextView
             val textViewAddress = itemView.findViewById(R.id.textViewAddress) as TextView
-            textViewName.text = user.firstName + "" + user.lastName
+            textViewName.text = user.firstName + " " + user.lastName
             textViewAddress.text = user.address
         }
+    }
+
+    fun setUserList(userList: ArrayList<ResultItem?>?) {
+        this.userList = userList
+        notifyDataSetChanged()
     }
 }

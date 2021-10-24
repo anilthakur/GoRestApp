@@ -1,8 +1,8 @@
 package com.anil.gorestapp.repostries
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.anil.gorestapp.base.base.domain.ResultData
-import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
+import com.anil.gorestapp.base.domain.ResultData
+import com.anil.gorestapp.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.person.entities.Meta
 import com.anil.gorestapp.person.entities.Person
 import com.anil.gorestapp.person.entities.RateLimit

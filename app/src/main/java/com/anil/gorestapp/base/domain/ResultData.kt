@@ -1,4 +1,4 @@
-package com.anil.gorestapp.base.base.domain
+package com.anil.gorestapp.base.domain
 
 import com.anil.gorestapp.base.domain.model.ErrorModel
 

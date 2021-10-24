@@ -1,4 +1,4 @@
-package com.android.artgallery.di
+package com.anil.gorestapp.di
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
