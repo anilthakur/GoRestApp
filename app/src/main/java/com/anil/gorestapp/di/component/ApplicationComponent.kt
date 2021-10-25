@@ -1,7 +1,6 @@
 package com.anil.gorestapp.di.component
 
 import android.app.Application
-import com.android.artgallery.di.module.ActivityModule
 import com.anil.gorestapp.base.MainApplication
 import com.anil.gorestapp.di.module.ApplicationModule
 import com.anil.gorestapp.di.module.NetworkModule
@@ -18,7 +17,6 @@ import javax.inject.Singleton
 @Component(
     modules = [
         ApplicationModule::class,
-        ActivityModule::class,
         NetworkModule::class,
         MainActivityBinding::class,
         AndroidSupportInjectionModule::class

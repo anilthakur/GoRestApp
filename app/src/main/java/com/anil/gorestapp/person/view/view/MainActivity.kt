@@ -1,9 +1,5 @@
 package com.anil.gorestapp.person.view.view
 
-import android.content.BroadcastReceiver
-import android.content.IntentFilter
-import android.net.ConnectivityManager
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +12,7 @@ import com.anil.gorestapp.person.entities.Person
 import com.anil.gorestapp.person.view.adapter.PersonAdapter
 import com.anil.gorestapp.person.view.widget.PersonWidget
 import com.anil.gorestapp.person.viewmodel.PersonViewModel
+import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -33,8 +30,10 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidInjection.inject(this)
         setContentView(R.layout.activity_main)
         toolbar.title = getString(R.string.app_name)
+        showNetworkMessage(true)
         setSupportActionBar(toolbar);
         offerTypeResponseMutableData()
     }
