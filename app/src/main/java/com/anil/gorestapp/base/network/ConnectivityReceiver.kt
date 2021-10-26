@@ -5,9 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 
-/**
- * Created by Anil Kumar on 2020-03-08
- */
 class ConnectivityReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
