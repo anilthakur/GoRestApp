@@ -1,10 +1,10 @@
-package com.anil.gorestapp.di.module
+package com.anil.gorestapp.base.di.module
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
-import com.anil.gorestapp.data.remote.RetrofitService
-import com.anil.gorestapp.di.scope.PerApplication
+import com.anil.gorestapp.base.dataservice.remote.RetrofitService
+import com.anil.gorestapp.base.di.scope.PerApplication
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -27,7 +27,7 @@ class NetworkModule {
             okHttpClient: OkHttpClient
     ): Retrofit {
         return Retrofit.Builder()
-                .baseUrl("https://gorest.co.in/")
+                .baseUrl("https://www.googleapis.com/")
                 .addConverterFactory(gsonConverterFactory)
                 .addCallAdapterFactory(rxJava2CallAdapterFactory)
                 .client(okHttpClient)

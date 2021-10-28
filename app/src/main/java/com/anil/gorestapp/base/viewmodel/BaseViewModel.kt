@@ -10,6 +10,7 @@ import com.anil.gorestapp.base.domain.model.ErrorModel
          data class Success(val data: Any) : State()
          object EmptyData : State()
          object Loading : State()
-         data class Error(var errorModel: ErrorModel) : State()
+         object NetworkError:State()
+         object GeneralError:State()
      }
  }

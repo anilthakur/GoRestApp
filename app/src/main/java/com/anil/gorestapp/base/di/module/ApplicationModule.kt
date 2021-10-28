@@ -1,4 +1,4 @@
-package com.anil.gorestapp.di.module
+package com.anil.gorestapp.base.di.module
 
 import android.app.Application
 import android.content.Context
@@ -11,7 +11,7 @@ import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.base.database.DbConstants
 import com.anil.gorestapp.base.database.PersonDatabase
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
-import com.anil.gorestapp.di.scope.PerApplication
+import com.anil.gorestapp.base.di.scope.PerApplication
 import com.anil.gorestapp.person.local.PersonDao
 import dagger.Module
 import dagger.Provides

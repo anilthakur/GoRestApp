@@ -1,7 +1,7 @@
-package com.anil.gorestapp.di.qualifier
+package com.anil.gorestapp.base.di.qualifier
 
 import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
-annotation class ForActivity
+annotation class ForFragment

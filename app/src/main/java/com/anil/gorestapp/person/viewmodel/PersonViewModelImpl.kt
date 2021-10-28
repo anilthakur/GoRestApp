@@ -28,7 +28,7 @@ class PersonViewModelImpl @Inject constructor(private val getPersonUseCase: Pers
 
             }
             is PersonUseCase.Result.Error -> {
-                personResponseLiveData.value = State.Error(result.errorModel)
+                personResponseLiveData.value = State.NetworkError
             }
         }
     }

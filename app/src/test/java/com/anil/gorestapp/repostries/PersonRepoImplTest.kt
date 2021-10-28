@@ -8,7 +8,7 @@ import com.anil.gorestapp.person.entities.Person
 import com.anil.gorestapp.person.entities.RateLimit
 import com.anil.gorestapp.person.entities.ResultItem
 import com.anil.gorestapp.person.local.PersonDao
-import com.anil.gorestapp.data.remote.RetrofitService
+import com.anil.gorestapp.base.dataservice.remote.RetrofitService
 import com.anil.gorestapp.person.repository.PersonRepoImpl
 import com.anil.gorestapp.testutils.fileToGson
 import com.google.gson.Gson

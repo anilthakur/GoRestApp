@@ -1,4 +1,4 @@
-package com.android.artgallery.di.module
+package com.anil.gorestapp.base.di.module
 
 import com.anil.gorestapp.person.view.widget.PersonWidget
 import com.anil.gorestapp.person.view.widget.PersonWidgetImpl

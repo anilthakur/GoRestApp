@@ -15,6 +15,7 @@ import com.anil.gorestapp.person.viewmodel.PersonViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
+import javax.inject.Named
 
 
 class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
@@ -27,6 +28,10 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
 
     @Inject
     lateinit var personWidgetImpl: PersonWidget
+
+    @Inject
+    @Named("PerActivity")
+    lateinit var pdpListWidget: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +56,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
                     recyclerView.layoutManager =
                         LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
 
-                } else if (state is BaseViewModel.State.Error) {
+                } else if (state is BaseViewModel.State.NetworkError) {
                     recyclerView.visibility = View.GONE
                     no_dataFound.visibility = View.VISIBLE
                 }

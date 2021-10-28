@@ -4,8 +4,9 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.anil.gorestapp.di.qualifier.ForActivity
-import com.anil.gorestapp.di.scope.PerActivity
+import com.anil.gorestapp.books.injection.BooksFragmentBinding
+import com.anil.gorestapp.base.di.qualifier.ForActivity
+import com.anil.gorestapp.base.di.scope.PerActivity
 import com.anil.gorestapp.person.domain.GetPersonUseCaseImpl
 import com.anil.gorestapp.person.domain.PersonUseCase
 import com.anil.gorestapp.person.repository.PersonRepo
@@ -18,8 +19,10 @@ import com.anil.gorestapp.person.viewmodel.PersonViewModelFactory
 import com.anil.gorestapp.person.viewmodel.PersonViewModelImpl
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
-@Module
+
+@Module(includes = [BooksFragmentBinding::class])
 class MainActivityActivityModule {
     @Provides
     @PerActivity
@@ -52,5 +55,12 @@ class MainActivityActivityModule {
 
     @Provides
     fun providePersonRepository(personRepository: PersonRepoImpl): PersonRepo = personRepository
+
+    @PerActivity
+    @Provides
+    @Named("PerActivity")
+    open fun provideInt(): String {
+        return "hello"
+    }
 
 }

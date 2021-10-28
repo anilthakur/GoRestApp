@@ -7,7 +7,7 @@ import com.anil.gorestapp.base.domain.ResponseServiceCode
 import com.anil.gorestapp.base.domain.model.ErrorModel
 import com.anil.gorestapp.person.local.PersonDao
 import com.anil.gorestapp.person.entities.Person
-import com.anil.gorestapp.data.remote.RetrofitService
+import com.anil.gorestapp.base.dataservice.remote.RetrofitService
 import com.anil.gorestapp.utils.Constant
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter

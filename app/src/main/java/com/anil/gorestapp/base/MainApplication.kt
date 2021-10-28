@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.anil.gorestapp.base.network.ConnectivityReceiver
-import com.anil.gorestapp.di.component.ApplicationComponent
-import com.anil.gorestapp.di.component.DaggerApplicationComponent
+import com.anil.gorestapp.base.di.component.ApplicationComponent
+import com.anil.gorestapp.base.di.component.DaggerApplicationComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -15,7 +15,7 @@ import kotlin.properties.Delegates
 
 open class MainApplication : Application(),HasAndroidInjector {
 
-    private lateinit var appComponent: ApplicationComponent
+    public lateinit var appComponent: ApplicationComponent
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
     override fun onCreate() {
@@ -44,6 +44,7 @@ open class MainApplication : Application(),HasAndroidInjector {
             .application(this)
             .build()
             .inject(this)
+
     }
     override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
 

@@ -1,4 +1,4 @@
-package com.anil.gorestapp.data.remote
+package com.anil.gorestapp.base.dataservice.remote
 
 import com.anil.gorestapp.person.entities.Person
 import io.reactivex.Single
