@@ -3,11 +3,14 @@ package com.anil.gorestapp.person.view.view
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anil.gorestapp.R
 import com.anil.gorestapp.base.network.ConnectivityReceiver
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
+import com.anil.gorestapp.books.view.BooksFragment
+import com.anil.gorestapp.books.viewmodel.BooksViewModel
 import com.anil.gorestapp.person.entities.Person
 import com.anil.gorestapp.person.view.adapter.PersonAdapter
 import com.anil.gorestapp.person.view.widget.PersonWidget
@@ -25,7 +28,6 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
 
     @Inject
     lateinit var viewModel: PersonViewModel
-
     @Inject
     lateinit var personWidgetImpl: PersonWidget
 
@@ -38,9 +40,10 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         AndroidInjection.inject(this)
         setContentView(R.layout.activity_main)
         toolbar.title = getString(R.string.app_name)
-        showNetworkMessage(true)
-        setSupportActionBar(toolbar);
-        offerTypeResponseMutableData()
+//        showNetworkMessage(true)
+//        setSupportActionBar(toolbar);
+//        offerTypeResponseMutableData()
+        showFragment()
     }
 
     private fun offerTypeResponseMutableData() {
@@ -64,17 +67,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         })
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
 
     private fun showNetworkMessage(isConnected: Boolean) {
 
@@ -84,6 +77,16 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
             viewModel.getPersonData(true)
         }
 
+    }
+
+    fun showFragment(){
+        supportFragmentManager
+            // 3
+            .beginTransaction()
+            // 4
+            .add(R.id.fragment_main, BooksFragment.newInstance(), "books_fragment")
+            // 5
+            .commit()
     }
 
 
