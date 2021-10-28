@@ -6,17 +6,12 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
         android:textSize="24sp"
-        android:text="Data Comming"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/books_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="false" />
+        android:gravity="center"
+        android:text="Books Item"/>
 
 </LinearLayout>

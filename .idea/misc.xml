@@ -5,8 +5,10 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/fragment_books.xml" value="0.19635416666666666" />
+        <entry key="app/src/main/res/layout/recycler_item_view.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_base_general_error.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_base_network_error.xml" value="0.22083333333333333" />
+        <entry key="app/src/main/res/layout/view_books_item.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/view_books_loaded.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_books_widget.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_loading.xml" value="0.22083333333333333" />

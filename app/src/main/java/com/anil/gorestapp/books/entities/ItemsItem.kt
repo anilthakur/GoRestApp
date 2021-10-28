@@ -1,5 +1,6 @@
 package com.anil.gorestapp.books.entities
 
+import com.anil.gorestapp.base.widget.DisplayableItem
 import com.google.gson.annotations.SerializedName
 
 data class ItemsItem(
@@ -27,4 +28,4 @@ data class ItemsItem(
 
 	@field:SerializedName("selfLink")
 	val selfLink: String? = null
-)
+) : DisplayableItem

@@ -1,16 +1,29 @@
 package com.anil.gorestapp.books.view.widget
 
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.anil.gorestapp.books.entities.Books
+import com.anil.gorestapp.books.entities.ItemsItem
+import com.anil.gorestapp.books.view.adapter.BookAdapter
 import com.anil.gorestapp.books.view.widget.BooksWidget.*
+import kotlinx.android.synthetic.main.view_books_loaded.*
 import kotlinx.android.synthetic.main.view_books_widget.*
 import javax.inject.Inject
+import javax.inject.Named
 
-class BooksWidgetImpl @Inject constructor() : BooksWidget {
+class BooksWidgetImpl @Inject constructor(
+    private val bookAdapter: BookAdapter,
+    @Named("ForBookAdapter")
+    private val linearLayoutManager: RecyclerView.LayoutManager
+) : BooksWidget {
     override lateinit var containerView: View
 
     override fun initView(contentView: View) {
         this.containerView = contentView
+        books_list.apply {
+            adapter = bookAdapter
+            layoutManager = linearLayoutManager
+        }
     }
 
 
@@ -18,6 +31,10 @@ class BooksWidgetImpl @Inject constructor() : BooksWidget {
 
 
     override fun setContent(content: Books) {
+        content?.let {
+            bookAdapter.setBooks(books = it.items as List<ItemsItem>)
+        }
+
         showState(State.CONTENT)
     }
 
@@ -36,9 +53,6 @@ class BooksWidgetImpl @Inject constructor() : BooksWidget {
         books_view_flipper.visibility = View.GONE
     }
 
-    private fun showLoading(isShow: Boolean) {
-
-    }
 
     private fun showState(state: State) {
         if (books_view_flipper.displayedChild != state.ordinal) {
