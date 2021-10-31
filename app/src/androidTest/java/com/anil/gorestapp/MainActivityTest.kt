@@ -10,8 +10,8 @@ import androidx.test.filters.LargeTest
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import com.anil.gorestapp.person.view.adapter.PersonAdapter
-import com.anil.gorestapp.person.view.view.MainActivity
+import com.anil.gorestapp.signin.view.adapter.PersonAdapter
+import com.anil.gorestapp.signin.view.view.MainActivity
 import junit.framework.Assert
 import org.junit.Rule
 import org.junit.Test

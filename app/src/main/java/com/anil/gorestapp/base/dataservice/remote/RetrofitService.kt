@@ -1,7 +1,7 @@
 package com.anil.gorestapp.base.dataservice.remote
 
 import com.anil.gorestapp.books.entities.Books
-import com.anil.gorestapp.person.entities.Person
+import com.anil.gorestapp.signin.entities.Person
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

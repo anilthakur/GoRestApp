@@ -19,7 +19,8 @@ buildscript {
     ext.roomVersion = '2.2.2'
     ext.lifecycle_version = '2.1.0'
     ext.daggerVer= "2.30.1"
-
+    ext.archComponentsVersion="2.2.0"
+    ext.biometric_version = "1.0.1"
     repositories {
         google()
         jcenter()

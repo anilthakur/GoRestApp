@@ -12,7 +12,10 @@ import com.anil.gorestapp.base.database.DbConstants
 import com.anil.gorestapp.base.database.PersonDatabase
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.base.di.scope.PerApplication
-import com.anil.gorestapp.person.local.PersonDao
+import com.anil.gorestapp.preferences.AppPreference
+import com.anil.gorestapp.preferences.AppPreferenceImpl
+import com.anil.gorestapp.signin.local.PersonDao
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
@@ -33,8 +36,12 @@ class ApplicationModule {
     @Provides
     @PerApplication
     fun providePersonDatabase(context: Context): PersonDatabase {
-        return Room.databaseBuilder(context, PersonDatabase::class.java!!, DbConstants.PERSON_DB_NAME)
-                .build()
+        return Room.databaseBuilder(
+            context,
+            PersonDatabase::class.java!!,
+            DbConstants.PERSON_DB_NAME
+        )
+            .build()
     }
 
 
@@ -74,5 +81,6 @@ class ApplicationModule {
     fun provideMediatorLiveData(): MediatorLiveData<BaseViewModel.State> {
         return MediatorLiveData<BaseViewModel.State>()
     }
+
 
 }

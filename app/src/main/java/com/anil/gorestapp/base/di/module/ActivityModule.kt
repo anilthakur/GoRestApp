@@ -1,7 +1,7 @@
 package com.anil.gorestapp.base.di.module
 
-import com.anil.gorestapp.person.view.widget.PersonWidget
-import com.anil.gorestapp.person.view.widget.PersonWidgetImpl
+import com.anil.gorestapp.signin.view.widget.PersonWidget
+import com.anil.gorestapp.signin.view.widget.PersonWidgetImpl
 import com.anil.gorestapp.preferences.AppPreference
 import com.anil.gorestapp.preferences.AppPreferenceImpl
 import dagger.Binds
