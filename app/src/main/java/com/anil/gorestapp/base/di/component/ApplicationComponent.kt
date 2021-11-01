@@ -1,14 +1,11 @@
 package com.anil.gorestapp.base.di.component
 
 import android.app.Application
-import com.anil.gorestapp.applock.injection.AppLockActivityBinding
 import com.anil.gorestapp.base.MainApplication
-import com.anil.gorestapp.books.injection.BooksFragmentBinding
-import com.anil.gorestapp.base.di.module.ApplicationModule
-import com.anil.gorestapp.base.di.module.NetworkModule
-import com.anil.gorestapp.base.di.module.PersistanceModule
+import com.anil.gorestapp.base.di.module.*
 import com.anil.gorestapp.base.di.scope.PerApplication
-import com.anil.gorestapp.signin.injection.MainActivityBinding
+import com.anil.gorestapp.books.injection.BooksFragmentBinding
+import com.anil.gorestapp.home.monitor.injection.MonitorFragmentBinding
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
@@ -19,10 +16,9 @@ import dagger.android.support.AndroidSupportInjectionModule
     modules = [
         ApplicationModule::class,
         NetworkModule::class,
-        MainActivityBinding::class,
-        AppLockActivityBinding::class,
-        BooksFragmentBinding::class,
         PersistanceModule::class,
+        ActivityModule::class,
+        FragmentModule::class,
         AndroidSupportInjectionModule::class
     ]
 )

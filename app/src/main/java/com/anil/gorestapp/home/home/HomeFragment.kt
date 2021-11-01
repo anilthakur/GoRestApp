@@ -1,4 +1,4 @@
-package com.anil.gorestapp.home.view
+package com.anil.gorestapp.home.home
 
 import androidx.fragment.app.Fragment
 
