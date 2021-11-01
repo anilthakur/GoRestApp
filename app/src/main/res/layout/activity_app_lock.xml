@@ -6,7 +6,11 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+<!--    <include layout="@layout/view_app_lock_set_pin_intro_page"/>-->
 
     <include layout="@layout/view_app_lock_widget" />
+
+
+
 
 </LinearLayout>

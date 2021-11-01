@@ -6,6 +6,7 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.31666666666666665" />
         <entry key="app/src/main/res/drawable-v24/default_indicator.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/drawable/avatar_borders.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.2828125" />
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/drawable/edit_text_holo_light.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3537037037037037" />
@@ -19,12 +20,15 @@
         <entry key="app/src/main/res/layout/recycler_item_view.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/the_items_layout.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_app_lock_registraion.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/view_app_lock_set_pin_intro_page.xml" value="0.33152173913043476" />
         <entry key="app/src/main/res/layout/view_app_lock_widget.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_base_general_error.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_base_network_error.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_books_item.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/view_books_loaded.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/view_books_widget.xml" value="0.22083333333333333" />
+        <entry key="app/src/main/res/layout/view_change_password.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/view_enter_pin.xml" value="0.23854166666666668" />
         <entry key="app/src/main/res/layout/view_loading.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/menu/navigation.xml" value="0.35052083333333334" />
       </map>

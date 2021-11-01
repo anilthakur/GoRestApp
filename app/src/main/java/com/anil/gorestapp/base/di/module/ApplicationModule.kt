@@ -3,13 +3,16 @@ package com.anil.gorestapp.base.di.module
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.Room
+import com.anil.gorestapp.applock.viewmodel.AppLockViewModel
 import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
 import com.anil.gorestapp.base.base.schedulers.SchedulerProvider
 import com.anil.gorestapp.base.base.schedulers.TestSchedulerProvider
 import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.base.database.DbConstants
 import com.anil.gorestapp.base.database.PersonDatabase
+import com.anil.gorestapp.base.di.scope.PerActivity
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.base.di.scope.PerApplication
 import com.anil.gorestapp.preferences.AppPreference
@@ -81,6 +84,7 @@ class ApplicationModule {
     fun provideMediatorLiveData(): MediatorLiveData<BaseViewModel.State> {
         return MediatorLiveData<BaseViewModel.State>()
     }
+
 
 
 }
