@@ -3,22 +3,17 @@ package com.anil.gorestapp.base.di.module
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.Room
-import com.anil.gorestapp.applock.viewmodel.AppLockViewModel
 import com.anil.gorestapp.base.base.schedulers.BaseSchedulerProvider
 import com.anil.gorestapp.base.base.schedulers.SchedulerProvider
 import com.anil.gorestapp.base.base.schedulers.TestSchedulerProvider
 import com.anil.gorestapp.base.base.schedulers.TrampolineSchedulerProvider
 import com.anil.gorestapp.base.database.DbConstants
-import com.anil.gorestapp.base.database.PersonDatabase
-import com.anil.gorestapp.base.di.scope.PerActivity
+import com.anil.gorestapp.base.dataservice.database.ApplicationRoomDatabase
 import com.anil.gorestapp.base.viewmodel.BaseViewModel
 import com.anil.gorestapp.base.di.scope.PerApplication
-import com.anil.gorestapp.preferences.AppPreference
-import com.anil.gorestapp.preferences.AppPreferenceImpl
+import com.anil.gorestapp.signin.local.MonitorDao
 import com.anil.gorestapp.signin.local.PersonDao
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
@@ -38,10 +33,10 @@ class ApplicationModule {
 
     @Provides
     @PerApplication
-    fun providePersonDatabase(context: Context): PersonDatabase {
+    fun providePersonDatabase(context: Context): ApplicationRoomDatabase {
         return Room.databaseBuilder(
             context,
-            PersonDatabase::class.java!!,
+            ApplicationRoomDatabase::class.java!!,
             DbConstants.PERSON_DB_NAME
         )
             .build()
@@ -78,7 +73,11 @@ class ApplicationModule {
 
     @Provides
     @PerApplication
-    fun providePersonDatabaseDao(database: PersonDatabase): PersonDao = database.personDao()
+    fun providePersonDatabaseDao(database: ApplicationRoomDatabase): PersonDao = database.personDao()
+
+    @Provides
+    @PerApplication
+    fun provideMonitorDatabaseDao(database: ApplicationRoomDatabase): MonitorDao = database.monitorDao()
 
     @Provides
     fun provideMediatorLiveData(): MediatorLiveData<BaseViewModel.State> {

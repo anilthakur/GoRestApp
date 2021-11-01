@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.anil.gorestapp.R
+import com.anil.gorestapp.home.monitor.entities.Monitor
+import com.anil.gorestapp.signin.local.MonitorDao
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 import javax.inject.Named
@@ -29,8 +31,7 @@ class MonitorFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("Dataaaaa","Value"+pdpListWidget)
-
+        Log.d("Dataaaaa", "Value" + pdpListWidget)
         return inflater.inflate(R.layout.fragment_books, container, false)
     }
 }
