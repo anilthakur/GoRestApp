@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-#     - name : Write permission for Gradlew
-#     - run : chmode+x ./gradlew
+    - name : Write permission for Gradlew
+    - run : chmode+x ./gradlew
 
 #     - name: set up JDK 1.8
 #       uses: actions/setup-java@v3
