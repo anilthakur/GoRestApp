@@ -4,8 +4,6 @@ import android.app.Application
 import com.anil.gorestapp.base.MainApplication
 import com.anil.gorestapp.base.di.module.*
 import com.anil.gorestapp.base.di.scope.PerApplication
-import com.anil.gorestapp.books.injection.BooksFragmentBinding
-import com.anil.gorestapp.home.monitor.injection.MonitorFragmentBinding
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule

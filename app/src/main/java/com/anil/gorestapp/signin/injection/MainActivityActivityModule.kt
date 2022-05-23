@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.anil.gorestapp.books.injection.BooksFragmentBinding
+import com.anil.gorestapp.question.injection.BooksFragmentBinding
 import com.anil.gorestapp.base.di.qualifier.ForActivity
 import com.anil.gorestapp.base.di.scope.PerActivity
 import com.anil.gorestapp.signin.domain.GetPersonUseCaseImpl
